@@ -7,9 +7,25 @@ on:
       - staging
 
 jobs:
+  app-build:
+    runs-on: ubuntu-latest
+    services:
+      php:
+        image: php:7.4
+    steps:
+      - uses: actions/checkout@v1
+      - name: Copy .env
+        run: php -r "file_exists('.env') || copy('.env.example', '.env');"
+      - name: Install Composer Dependencies
+        run: composer install -q --no-ansi --no-interaction --no-scripts --no-suggest --no-progress --prefer-dist
+      - name: Install NPM Dependencies
+        run: npm install
+      - name: Generate Key
+        run: php artisan key:generate
   build-js-production:
     name: Build JavaScript/CSS for PRODUCTION Server
     runs-on: ubuntu-latest
+    needs: [app-build]
     if: github.ref == 'refs/heads/master'
     steps:
       - uses: actions/checkout@v1
