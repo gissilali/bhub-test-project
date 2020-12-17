@@ -1,0 +1,30 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    name: Build and Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@master
+      - name: Setup Enviroment
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '7.4'
+      - name: Speed up the packages installation process
+        run: composer global require hirak/prestissimo
+      - name: Install Packages
+        run: composer install --no-dev
+      - name: Deploy to Server
+        run: php artisan deploy '3.236.103.172' -s upload
+        with:
+          user: silali
+          host: quick.playgrnd.space
+          port: 22
+          path: /var/www/quick.playgrnd.space
+          owner: silali
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}

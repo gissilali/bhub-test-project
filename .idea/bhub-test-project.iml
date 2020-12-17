@@ -113,6 +113,12 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/brick/math" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/tinker" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/laravel/framework" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/deployer/recipes" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/deployer/deployer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/pimple/pimple" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/symfony/yaml" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/lorisleiva/laravel-deployer" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/deployer/phar-update" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
