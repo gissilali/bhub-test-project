@@ -58,13 +58,13 @@ return [
         'ready' => [
             'artisan:storage:link',
             'artisan:view:clear',
-            'artisan:config:cache',
+            'artisan:config:clear',
             'artisan:migrate',
         ],
 
         // Deployment is done and live
         'done' => [
-            //
+            'artisan:config:cache',
         ],
 
         // Deployment succeeded.
