@@ -37,6 +37,4 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           username: ${{ secrets.SSH_USERNAME }}
           script: |
-            cd /var/www/quick.playgrnd.space
-            git checkout -f
-            git pull origin master
+            php artisan deploy '3.236.103.172' -s upload
