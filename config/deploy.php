@@ -111,7 +111,7 @@ return [
     */
 
     'hosts' => [
-        'quick.playgrnd.space' => [
+        '3.236.103.172' => [
             'deploy_path' => '/var/www/quick.playgrnd.space',
             'user' => 'root',
         ],
