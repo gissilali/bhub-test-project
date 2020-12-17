@@ -107,7 +107,7 @@ return [
     | Here, you can define any domain or subdomain you want to deploy to.
     | You can provide them with roles and stages to filter them during
     | deployment. Read more about how to configure them in the docs.
-    |//
+    |///
     */
 
     'hosts' => [
