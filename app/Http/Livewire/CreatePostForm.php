@@ -32,7 +32,7 @@ class CreatePostForm extends Component
         ]);
 
         $this->resetForm();
-
+        $this->emit('postCreated');
 
     }
 
