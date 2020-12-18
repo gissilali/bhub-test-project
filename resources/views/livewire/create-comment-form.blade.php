@@ -1,8 +1,8 @@
-<form   method="post" >
+<form  wire:submit.prevent="submitPost"  method="post" >
     {{ csrf_field() }}
     <div class="flex">
         <div class="flex-1 px-2 pt-2 mt-2">
-                    <textarea name="comment_body" class=" bg-transparent text-gray-400 px-3 py-3 focus:bg-gray-700 bg-gray-800 rounded-lg focus:border-none focus:outline-none font-medium text-lg w-full" rows="2" cols="50"
+                    <textarea wire:model.debounce.500ms="commentBody" name="comment_body" class=" bg-transparent text-gray-400 px-3 py-3 focus:bg-gray-700 bg-gray-800 rounded-lg focus:border-none focus:outline-none font-medium text-lg w-full" rows="2" cols="50"
                               placeholder="What's your comment?">{{ old('comment_body') }}</textarea>
             @error('postBody')
             <small class="text-gray-200">{{ $message }}</small>

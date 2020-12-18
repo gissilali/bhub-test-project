@@ -8,6 +8,7 @@ use Livewire\Component;
 class CreateCommentForm extends Component
 {
     public $postId;
+    public $commentBody;
 
     protected $rules = [
         'commentBody' => 'required'
@@ -23,7 +24,7 @@ class CreateCommentForm extends Component
         $this->validate();
         Comment::create([
             'body' => $this->commentBody,
-            'post_id' => $this
+            'post_id' => $this->postId
         ]);
 
         $this->resetForm();
