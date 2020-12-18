@@ -64,6 +64,7 @@ return [
 
         // Deployment is done and live
         'done' => [
+            'fpm:reload',
             'artisan:config:cache',
         ],
 
@@ -97,8 +98,9 @@ return [
     'options' => [
         'application' => env('APP_NAME', 'Laravel'),
         'repository' => 'https://github.com/gissilali/bhub-test-project.git',
+        'php_fpm_service' => 'php7.4-fpm',
+        'php_fpm_command' => 'echo "" | sudo -S /usr/sbin/service {{php_fpm_service}} reload',
     ],
-
     /*
     |--------------------------------------------------------------------------
     | Hosts

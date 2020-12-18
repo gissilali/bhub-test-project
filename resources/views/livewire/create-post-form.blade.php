@@ -1,4 +1,4 @@
-<form wire:submit.prevent="submitPost" action="{{ route('posts.store') }}" method="post">
+<form wire:submit.prevent="submitPost"  method="post">
     {{ csrf_field() }}
     <div class="flex">
         <div class="flex-1 m-2">

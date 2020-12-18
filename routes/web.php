@@ -16,5 +16,3 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', PostsController::class);
-
-Route::post('/comments/{post_id}', [CommentsController::class, 'store'])->name('posts.store');
