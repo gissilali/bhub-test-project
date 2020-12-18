@@ -11,14 +11,24 @@ class PostList extends Component
 
     public $posts;
 
+    public function __construct($id = null)
+    {
+        parent::__construct($id);
+        $this->refreshPosts();
+    }
+
     public function render()
     {
-        $this->refreshPosts();
         return view('livewire.post-list');
     }
 
     public function refreshPosts()
     {
         $this->posts = Post::orderBy('created_at', 'desc')->get();
+    }
+
+    public function postSelected($post)
+    {
+        $this->emit('postCreated', $post);
     }
 }

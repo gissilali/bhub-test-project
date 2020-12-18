@@ -1,11 +1,8 @@
 @component('mail::message')
-# Introduction
+# Comment created
 
-The body of your message.
+{{ $comment->body }}
 
-@component('mail::button', ['url' => ''])
-Button Text
-@endcomponent
 
 Thanks,<br>
 {{ config('app.name') }}

@@ -14,8 +14,8 @@ class CreatePostForm extends Component
     public $photo;
 
     protected $rules = [
-        'postBody' => 'required',
-        'photo' => 'image'
+        'postBody' => 'nullable',
+        'photo' => 'nullable | image'
     ];
 
     public function render()
@@ -25,7 +25,7 @@ class CreatePostForm extends Component
 
     public function submitPost()
     {
-//        $this->validate();
+        $this->validate();
         Post::create([
             'post_body' => $this->postBody,
             'photo_url' => $this->photo ? $this->photo->store('public/photos') : null
@@ -44,5 +44,6 @@ class CreatePostForm extends Component
     private function resetForm()
     {
         $this->postBody = '';
+        $this->photo = null;
     }
 }

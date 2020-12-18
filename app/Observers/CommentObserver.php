@@ -12,7 +12,7 @@ class CommentObserver
     public function created(Comment $comment)
     {
         Mail::to('admin@bhub.com')
-        ->send(new CommentCreatedMail());
+        ->send(new CommentCreatedMail($comment));
     }
 
 

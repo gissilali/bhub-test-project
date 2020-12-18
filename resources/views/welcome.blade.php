@@ -8,7 +8,7 @@
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.8.0/dist/alpine.min.js" defer></script>
+    <script src="{{ asset('js/alpine.js') }}" defer></script>
 
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
@@ -52,8 +52,8 @@
         </div>
 
 
-        <div class="w-2/5 h-12">
-
+        <div class="w-2/5 fixed ">
+            <livewire:comment-list/>
         </div>
     </div>
     <!-- modal div -->
